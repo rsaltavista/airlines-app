@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(windowScene: windowScene)
         
-        let viewController = ViewController()
+        let viewController = FlightsViewController()
         
         let navigationController = UINavigationController(rootViewController: viewController)
         
