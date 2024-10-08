@@ -16,6 +16,7 @@
 		1F1D94042CB43F0D00BBB632 /* AirlinesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94032CB43F0D00BBB632 /* AirlinesUITests.swift */; };
 		1F1D94062CB43F0D00BBB632 /* AirlinesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94052CB43F0D00BBB632 /* AirlinesUITestsLaunchTests.swift */; };
 		1F1D94192CB5D2B400BBB632 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94182CB5D2B400BBB632 /* Flight.swift */; };
+		1F1D941D2CB5E74200BBB632 /* FlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D941C2CB5E74200BBB632 /* FlightCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1F1D94032CB43F0D00BBB632 /* AirlinesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlinesUITests.swift; sourceTree = "<group>"; };
 		1F1D94052CB43F0D00BBB632 /* AirlinesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlinesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1F1D94182CB5D2B400BBB632 /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		1F1D941C2CB5E74200BBB632 /* FlightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		1F1D93E12CB43F0B00BBB632 /* Airlines */ = {
 			isa = PBXGroup;
 			children = (
+				1F1D941B2CB5E70100BBB632 /* View */,
 				1F1D941A2CB5D2BA00BBB632 /* Model */,
 				1F1D93E22CB43F0B00BBB632 /* AppDelegate.swift */,
 				1F1D93E42CB43F0B00BBB632 /* SceneDelegate.swift */,
@@ -133,6 +136,14 @@
 				1F1D94182CB5D2B400BBB632 /* Flight.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1F1D941B2CB5E70100BBB632 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F1D941C2CB5E74200BBB632 /* FlightCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +280,7 @@
 				1F1D94192CB5D2B400BBB632 /* Flight.swift in Sources */,
 				1F1D93E32CB43F0B00BBB632 /* AppDelegate.swift in Sources */,
 				1F1D93E52CB43F0B00BBB632 /* SceneDelegate.swift in Sources */,
+				1F1D941D2CB5E74200BBB632 /* FlightCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
