@@ -17,6 +17,8 @@
 		1F1D94062CB43F0D00BBB632 /* AirlinesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94052CB43F0D00BBB632 /* AirlinesUITestsLaunchTests.swift */; };
 		1F1D94192CB5D2B400BBB632 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94182CB5D2B400BBB632 /* Flight.swift */; };
 		1F1D941D2CB5E74200BBB632 /* FlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D941C2CB5E74200BBB632 /* FlightCell.swift */; };
+		1F1D941F2CB5E82700BBB632 /* FlightsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D941E2CB5E82700BBB632 /* FlightsHeaderView.swift */; };
+		1F1D94212CB5E86500BBB632 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94202CB5E86500BBB632 /* FilterButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		1F1D94052CB43F0D00BBB632 /* AirlinesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlinesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1F1D94182CB5D2B400BBB632 /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
 		1F1D941C2CB5E74200BBB632 /* FlightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCell.swift; sourceTree = "<group>"; };
+		1F1D941E2CB5E82700BBB632 /* FlightsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsHeaderView.swift; sourceTree = "<group>"; };
+		1F1D94202CB5E86500BBB632 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				1F1D941C2CB5E74200BBB632 /* FlightCell.swift */,
+				1F1D941E2CB5E82700BBB632 /* FlightsHeaderView.swift */,
+				1F1D94202CB5E86500BBB632 /* FilterButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -277,10 +283,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F1D93E72CB43F0B00BBB632 /* ViewController.swift in Sources */,
+				1F1D941F2CB5E82700BBB632 /* FlightsHeaderView.swift in Sources */,
 				1F1D94192CB5D2B400BBB632 /* Flight.swift in Sources */,
 				1F1D93E32CB43F0B00BBB632 /* AppDelegate.swift in Sources */,
 				1F1D93E52CB43F0B00BBB632 /* SceneDelegate.swift in Sources */,
 				1F1D941D2CB5E74200BBB632 /* FlightCell.swift in Sources */,
+				1F1D94212CB5E86500BBB632 /* FilterButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
