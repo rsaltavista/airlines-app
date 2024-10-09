@@ -7,34 +7,29 @@
 
 import Foundation
 
-
 protocol FlightViewModelProtocol {
-    var flights: [Flight] {get}
-    var onFlightsUpdated: (() -> Void)? {get set}
-    func loadFlights()
+    func loadFlights(completion: @escaping () -> Void)
     func numberOfFlights() -> Int
-    func flightInfo(at index: Int) -> FlightCell.Model
+    func flightInfo(at index: Int) -> Flight
 }
 
-class FlightViewModel: FlightViewModelProtocol {
-    private(set) var flights: [Flight] = []
-    var onFlightsUpdated: (() -> Void)?
+final class FlightViewModel: FlightViewModelProtocol {
+    private var flights: [Flight] = []
+    private let flightService: FlightServiceProtocol
     
-    func loadFlights() {
-        guard let url = Bundle.main.url(forResource: "massa-de-teste", withExtension: "json") else {
-            print("Error: File massa-de-teste.json not found.")
-            return
-        }
-        do {
-            let data = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let flightsResponse = try decoder.decode(FlightsResponse.self, from: data)
-            self.flights = flightsResponse.flights
-            onFlightsUpdated?()
-        }
-        catch {
-            print("Error trying to load data.\(error)")
+    init(flightService: FlightServiceProtocol) {
+        self.flightService = flightService
+    }
+    
+    func loadFlights(completion: @escaping () -> Void) {
+        flightService.loadFlights { [weak self] result in
+            switch result {
+            case .success(let flights):
+                self?.flights = flights
+                completion()
+            case .failure(let failure):
+                print("Error loading flights - \(failure)")
+            }
         }
     }
     
@@ -42,15 +37,7 @@ class FlightViewModel: FlightViewModelProtocol {
         return flights.count
     }
     
-    func flightInfo(at index: Int) -> FlightCell.Model {
-        let flight = flights[index]
-        return FlightCell.Model(
-            departureAirportText: flight.departureAirport,
-            arrivalAirportText: flight.arrivalAirport,
-            statusText: flight.status.rawValue,
-            statusCompletionText: flight.completionStatus.rawValue,
-            departureTimeText: flight.departureTime,
-            arrivalTimeText: flight.arrivalTime
-        )
+    func flightInfo(at index: Int) -> Flight {
+        return flights[index]
     }
 }

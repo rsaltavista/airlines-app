@@ -14,8 +14,6 @@ final class FilterButton: UIButton {
         
         setTitle(title, for: .normal)
         setTitleColor(.black, for: .normal)
-//        backgroundColor = .systemBlue
-//        layer.cornerRadius = 20
         
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         titleLabel?.lineBreakMode = .byClipping

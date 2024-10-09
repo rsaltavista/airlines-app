@@ -9,33 +9,41 @@ import UIKit
 
 final class FlightsViewController: UIViewController {
     
-    private var collectionView: UICollectionView!
-    private var viewModel: FlightViewModelProtocol!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        viewModel = FlightViewModel()
-        setupCollectionView()
-        setupNavigationBar()
-        
-        viewModel.onFlightsUpdated = { [weak self] in
-            self?.collectionView.reloadData()
-        }
-        viewModel.loadFlights()
-    }
-    
-    private func setupCollectionView() {
+    private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 20, height: 150)
         layout.minimumLineSpacing = 10
-        layout.headerReferenceSize = CGSize(width: view.frame.size.width, height: 60)
+        layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 60)
         
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
         collectionView.register(FlightCell.self, forCellWithReuseIdentifier: "FlightCell")
+        return collectionView
+    }()
+    
+    private let viewModel: FlightViewModelProtocol
+    
+    init(viewModel: FlightViewModelProtocol){
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
+        setupCollectionView()
+        setupNavigationBar()
+        
+        viewModel.loadFlights { [weak self] in
+            self?.collectionView.reloadData()
+        }
+    }
+    
+    private func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -56,17 +64,6 @@ final class FlightsViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-//        let logoImage = UIImage(named: "logowayairlines")
-//        let logoImageView = UIImageView(image: logoImage)
-//        logoImageView.contentMode = .scaleAspectFit
-//        
-//        let logoContainerView = UIView(frame: CGRect(x: 0, y: -15, width: 100, height: 80))
-//        logoImageView.frame = CGRect(x: 0, y: -15, width: 50, height: 80)
-//        logoContainerView.addSubview(logoImageView)
-//        
-//        let logoBarButtonItem = UIBarButtonItem(customView: logoContainerView)
-//        navigationItem.leftBarButtonItem = logoBarButtonItem
-        
         let titleLabel = UILabel()
         titleLabel.text = "Flights"
         titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
@@ -84,12 +81,11 @@ final class FlightsViewController: UIViewController {
         navigationItem.titleView = titleContainerView
         
         if let navigationBar = navigationController?.navigationBar {
-                navigationBar.isTranslucent = false // Desativa a translucidez
-                navigationBar.shadowImage = UIImage() // Remove a sombra da barra de navegação (opcional)
+                navigationBar.isTranslucent = false
+                navigationBar.shadowImage = UIImage()
                 
-                // Se quiser que o fundo da status bar combine, pode ajustar aqui
                 let appearance = UINavigationBarAppearance()
-                appearance.backgroundColor = .white // Cor de fundo
+                appearance.backgroundColor = .white
                 navigationBar.standardAppearance = appearance
                 navigationBar.scrollEdgeAppearance = appearance
             }
@@ -104,8 +100,8 @@ extension FlightsViewController: UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FlightCell", for: indexPath) as! FlightCell
-        let flightModel = viewModel.flightInfo(at: indexPath.row)
-        cell.configure(with: flightModel)
+        let flight = viewModel.flightInfo(at: indexPath.row)
+        cell.configure(with: flight.asCellModel)
         return cell
     }
     
@@ -119,11 +115,4 @@ extension FlightsViewController: UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 60)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedFlight = viewModel.flights[indexPath.row]
-        print("Voo selecionado: \(selectedFlight.flightId)")
-    }
 }
-
-

@@ -22,6 +22,8 @@
 		1F1D94232CB5E99400BBB632 /* FlightResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94222CB5E99400BBB632 /* FlightResponse.swift */; };
 		1F1D94272CB5EABA00BBB632 /* massa-de-teste.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F1D94262CB5EABA00BBB632 /* massa-de-teste.json */; };
 		1F1D94292CB6FE9100BBB632 /* FlightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94282CB6FE9100BBB632 /* FlightViewModel.swift */; };
+		1F1D942B2CB7291100BBB632 /* Flight+FlightCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D942A2CB7291100BBB632 /* Flight+FlightCellModel.swift */; };
+		1F1D942D2CB73CF000BBB632 /* FlightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D942C2CB73CF000BBB632 /* FlightService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		1F1D94222CB5E99400BBB632 /* FlightResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightResponse.swift; sourceTree = "<group>"; };
 		1F1D94262CB5EABA00BBB632 /* massa-de-teste.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "massa-de-teste.json"; sourceTree = "<group>"; };
 		1F1D94282CB6FE9100BBB632 /* FlightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightViewModel.swift; sourceTree = "<group>"; };
+		1F1D942A2CB7291100BBB632 /* Flight+FlightCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flight+FlightCellModel.swift"; sourceTree = "<group>"; };
+		1F1D942C2CB73CF000BBB632 /* FlightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 				1F1D93E62CB43F0B00BBB632 /* FlightsViewController.swift */,
 				1F1D94282CB6FE9100BBB632 /* FlightViewModel.swift */,
 				1F1D94222CB5E99400BBB632 /* FlightResponse.swift */,
+				1F1D942A2CB7291100BBB632 /* Flight+FlightCellModel.swift */,
+				1F1D942C2CB73CF000BBB632 /* FlightService.swift */,
 				1F1D93EB2CB43F0D00BBB632 /* Assets.xcassets */,
 				1F1D93ED2CB43F0D00BBB632 /* LaunchScreen.storyboard */,
 				1F1D93F02CB43F0D00BBB632 /* Info.plist */,
@@ -292,7 +298,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F1D942D2CB73CF000BBB632 /* FlightService.swift in Sources */,
 				1F1D93E72CB43F0B00BBB632 /* FlightsViewController.swift in Sources */,
+				1F1D942B2CB7291100BBB632 /* Flight+FlightCellModel.swift in Sources */,
 				1F1D941F2CB5E82700BBB632 /* FlightsHeaderView.swift in Sources */,
 				1F1D94192CB5D2B400BBB632 /* Flight.swift in Sources */,
 				1F1D93E32CB43F0B00BBB632 /* AppDelegate.swift in Sources */,
