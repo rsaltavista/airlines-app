@@ -71,21 +71,21 @@ final class FlightsViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        let logoImage = UIImage(named: "logowayairlines")
-        let logoImageView = UIImageView(image: logoImage)
-        logoImageView.contentMode = .scaleAspectFit
-        
-        let logoContainerView = UIView(frame: CGRect(x: 0, y: -15, width: 100, height: 80))
-        logoImageView.frame = CGRect(x: 0, y: -15, width: 100, height: 80)
-        logoContainerView.addSubview(logoImageView)
-        
-        let logoBarButtonItem = UIBarButtonItem(customView: logoContainerView)
-        navigationItem.leftBarButtonItem = logoBarButtonItem
+//        let logoImage = UIImage(named: "logowayairlines")
+//        let logoImageView = UIImageView(image: logoImage)
+//        logoImageView.contentMode = .scaleAspectFit
+//        
+//        let logoContainerView = UIView(frame: CGRect(x: 0, y: -15, width: 100, height: 80))
+//        logoImageView.frame = CGRect(x: 0, y: -15, width: 50, height: 80)
+//        logoContainerView.addSubview(logoImageView)
+//        
+//        let logoBarButtonItem = UIBarButtonItem(customView: logoContainerView)
+//        navigationItem.leftBarButtonItem = logoBarButtonItem
         
         let titleLabel = UILabel()
         titleLabel.text = "Flights"
         titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
-        titleLabel.textColor = .white
+        titleLabel.textColor = .black
         
         let titleContainerView = UIView()
         titleContainerView.addSubview(titleLabel)
@@ -99,12 +99,15 @@ final class FlightsViewController: UIViewController {
         navigationItem.titleView = titleContainerView
         
         if let navigationBar = navigationController?.navigationBar {
-            navigationBar.barTintColor = .blue
-            
-            navigationBar.isTranslucent = false
-            
-            navigationBar.shadowImage = UIImage()
-        }
+                navigationBar.isTranslucent = false // Desativa a translucidez
+                navigationBar.shadowImage = UIImage() // Remove a sombra da barra de navegação (opcional)
+                
+                // Se quiser que o fundo da status bar combine, pode ajustar aqui
+                let appearance = UINavigationBarAppearance()
+                appearance.backgroundColor = .white // Cor de fundo
+                navigationBar.standardAppearance = appearance
+                navigationBar.scrollEdgeAppearance = appearance
+            }
     }
 }
 

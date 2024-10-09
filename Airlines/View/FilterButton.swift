@@ -13,9 +13,9 @@ final class FilterButton: UIButton {
         super.init(frame: .zero)
         
         setTitle(title, for: .normal)
-        setTitleColor(.white, for: .normal)
-        backgroundColor = .systemBlue
-        layer.cornerRadius = 20
+        setTitleColor(.black, for: .normal)
+//        backgroundColor = .systemBlue
+//        layer.cornerRadius = 20
         
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         titleLabel?.lineBreakMode = .byClipping
@@ -23,7 +23,7 @@ final class FilterButton: UIButton {
         
         translatesAutoresizingMaskIntoConstraints = false
         heightAnchor.constraint(equalToConstant: 40).isActive = true
-        widthAnchor.constraint(equalToConstant: 120).isActive = true
+        widthAnchor.constraint(equalToConstant: 110).isActive = true
     }
     
     required init?(coder: NSCoder) {

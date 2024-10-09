@@ -41,8 +41,19 @@ final class FlightCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = .lightGray
-        layer.cornerRadius = 10
+        backgroundColor = .white
+        layer.masksToBounds = false
+        
+        layer.shadowColor = UIColor.black.cgColor // Cor da sombra
+                layer.shadowOpacity = 0.2 // Opacidade da sombra (20%)
+                layer.shadowOffset = CGSize(width: 0, height: 2) // Deslocamento leve da sombra (sombras abaixo)
+                layer.shadowRadius = 4 // Raio de difusão da sombra (aumenta o efeito suave)
+
+//        layer.borderWidth = 1
+//        layer.cornerRadius = 10
+//        layer.shadowColor = UIColor.lightGray.cgColor
+//        layer.shadowRadius = 3
+//        layer.shadowOpacity = 0.5
         
         departureAirportLabel.font = UIFont.boldSystemFont(ofSize: 14)
         arrivalAirportLabel.font = UIFont.systemFont(ofSize: 16)
