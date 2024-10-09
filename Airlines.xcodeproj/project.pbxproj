@@ -21,6 +21,7 @@
 		1F1D94212CB5E86500BBB632 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94202CB5E86500BBB632 /* FilterButton.swift */; };
 		1F1D94232CB5E99400BBB632 /* FlightResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94222CB5E99400BBB632 /* FlightResponse.swift */; };
 		1F1D94272CB5EABA00BBB632 /* massa-de-teste.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F1D94262CB5EABA00BBB632 /* massa-de-teste.json */; };
+		1F1D94292CB6FE9100BBB632 /* FlightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94282CB6FE9100BBB632 /* FlightViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		1F1D94202CB5E86500BBB632 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		1F1D94222CB5E99400BBB632 /* FlightResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightResponse.swift; sourceTree = "<group>"; };
 		1F1D94262CB5EABA00BBB632 /* massa-de-teste.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "massa-de-teste.json"; sourceTree = "<group>"; };
+		1F1D94282CB6FE9100BBB632 /* FlightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				1F1D93E22CB43F0B00BBB632 /* AppDelegate.swift */,
 				1F1D93E42CB43F0B00BBB632 /* SceneDelegate.swift */,
 				1F1D93E62CB43F0B00BBB632 /* FlightsViewController.swift */,
+				1F1D94282CB6FE9100BBB632 /* FlightViewModel.swift */,
 				1F1D94222CB5E99400BBB632 /* FlightResponse.swift */,
 				1F1D93EB2CB43F0D00BBB632 /* Assets.xcassets */,
 				1F1D93ED2CB43F0D00BBB632 /* LaunchScreen.storyboard */,
@@ -295,6 +298,7 @@
 				1F1D93E32CB43F0B00BBB632 /* AppDelegate.swift in Sources */,
 				1F1D94232CB5E99400BBB632 /* FlightResponse.swift in Sources */,
 				1F1D93E52CB43F0B00BBB632 /* SceneDelegate.swift in Sources */,
+				1F1D94292CB6FE9100BBB632 /* FlightViewModel.swift in Sources */,
 				1F1D941D2CB5E74200BBB632 /* FlightCell.swift in Sources */,
 				1F1D94212CB5E86500BBB632 /* FilterButton.swift in Sources */,
 			);

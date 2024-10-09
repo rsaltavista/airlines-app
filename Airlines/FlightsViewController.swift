@@ -10,34 +10,19 @@ import UIKit
 final class FlightsViewController: UIViewController {
     
     private var collectionView: UICollectionView!
-    private var flights: [Flight] = []
-    
-    private func loadFlights() -> [Flight]? {
-        guard let url = Bundle.main.url(forResource: "massa-de-teste", withExtension: "json") else {
-            print("Error: file massa-de-teste.json not found.")
-            return nil
-        }
-        
-        do {
-            let data = try Data(contentsOf: url)
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let flightsResponse = try decoder.decode(FlightsResponse.self, from: data)
-            return flightsResponse.flights
-        } catch {
-            print("error trying to load data: \(error)")
-            return nil
-        }
-    }
+    private var viewModel: FlightViewModelProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel = FlightViewModel()
         setupCollectionView()
-        
-        flights = loadFlights() ?? []
-        collectionView.reloadData()
-        
         setupNavigationBar()
+        
+        viewModel.onFlightsUpdated = { [weak self] in
+            self?.collectionView.reloadData()
+        }
+        viewModel.loadFlights()
     }
     
     private func setupCollectionView() {
@@ -114,23 +99,13 @@ final class FlightsViewController: UIViewController {
 extension FlightsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return flights.count
+        return viewModel.numberOfFlights()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FlightCell", for: indexPath) as! FlightCell
-        let flight = flights[indexPath.row]
-        let cellModel = FlightCell.Model(
-            departureAirportText: flight.departureAirport,
-            arrivalAirportText: flight.arrivalAirport,
-            statusText: flight.status.rawValue,
-            statusCompletionText: flight.completionStatus.rawValue,
-            departureTimeText: flight.departureTime,
-            arrivalTimeText: flight.arrivalTime
-        )
-        cell.configure(
-            with: cellModel
-        )
+        let flightModel = viewModel.flightInfo(at: indexPath.row)
+        cell.configure(with: flightModel)
         return cell
     }
     
@@ -146,7 +121,7 @@ extension FlightsViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedFlight = flights[indexPath.row]
+        let selectedFlight = viewModel.flights[indexPath.row]
         print("Voo selecionado: \(selectedFlight.flightId)")
     }
 }
