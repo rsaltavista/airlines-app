@@ -25,7 +25,7 @@ final class FlightsHeaderView: UICollectionReusableView {
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.spacing = -10
+        stackView.spacing = -30
         stackView.distribution = .equalSpacing
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
