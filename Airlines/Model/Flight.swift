@@ -29,5 +29,3 @@ struct Flight: Decodable {
         case canceled = "CANCELADO"
     }
 }
-
-

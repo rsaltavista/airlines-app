@@ -15,7 +15,6 @@ final class FlightsViewController: UIViewController {
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 20, height: 150)
         layout.minimumLineSpacing = 10
         layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 60)
-        
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
         collectionView.register(FlightCell.self, forCellWithReuseIdentifier: "FlightCell")
@@ -81,14 +80,14 @@ final class FlightsViewController: UIViewController {
         navigationItem.titleView = titleContainerView
         
         if let navigationBar = navigationController?.navigationBar {
-                navigationBar.isTranslucent = false
-                navigationBar.shadowImage = UIImage()
-                
-                let appearance = UINavigationBarAppearance()
-                appearance.backgroundColor = .white
-                navigationBar.standardAppearance = appearance
-                navigationBar.scrollEdgeAppearance = appearance
-            }
+            navigationBar.isTranslucent = false
+            navigationBar.shadowImage = UIImage()
+            
+            let appearance = UINavigationBarAppearance()
+            appearance.backgroundColor = .white
+            navigationBar.standardAppearance = appearance
+            navigationBar.scrollEdgeAppearance = appearance
+        }
     }
 }
 
@@ -111,8 +110,9 @@ extension FlightsViewController: UICollectionViewDataSource, UICollectionViewDel
         }
         
         header.onFilterButtonTapped = { [weak self] filterOption in
-            self?.viewModel.setFilter(filterOption)
-            self?.collectionView.reloadData()
+            self?.viewModel.setFilter(filterOption) {
+                self?.collectionView.reloadData()
+            }
         }
         return header
     }

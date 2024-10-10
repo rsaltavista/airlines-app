@@ -19,7 +19,7 @@ enum FilterOption: Int, CaseIterable {
         case .concluded: return "Concluídos"
         case .cancelled: return "Cancelados"
         case .onSchedule: return "Programados"
-        case .onTravel: return "Em Viagem"
+        case .onTravel: return "Em Andamento"
         }
     }
 }

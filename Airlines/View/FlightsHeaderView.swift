@@ -13,6 +13,8 @@ final class FlightsHeaderView: UICollectionReusableView {
     
     private var buttons: [FilterButton] = []
     
+    var onFilterButtonTapped: ((FilterOption) -> Void)?
+    
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = false
@@ -40,7 +42,6 @@ final class FlightsHeaderView: UICollectionReusableView {
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             scrollView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
-            
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
@@ -69,17 +70,12 @@ final class FlightsHeaderView: UICollectionReusableView {
         }
     }
     
-    var onFilterButtonTapped: ((FilterOption) -> Void)?
-    
-    @objc func filterButtonTapped(_ button: FilterButton) {
+    @objc private func filterButtonTapped(_ button: FilterButton) {
         guard let filterOption = FilterOption(rawValue: button.tag) else {
             return
         }
-        
         buttons.forEach{ $0.isSelectedButton = false}
-        
         button.isSelectedButton = true
-        
         onFilterButtonTapped?(filterOption)
     }
 }
