@@ -109,6 +109,11 @@ extension FlightsViewController: UICollectionViewDataSource, UICollectionViewDel
         guard kind == UICollectionView.elementKindSectionHeader, let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FlightsHeaderView.identifier, for: indexPath) as? FlightsHeaderView else {
             return UICollectionReusableView()
         }
+        
+        header.onFilterButtonTapped = { [weak self] filterOption in
+            self?.viewModel.setFilter(filterOption)
+            self?.collectionView.reloadData()
+        }
         return header
     }
     

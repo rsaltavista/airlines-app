@@ -11,7 +11,7 @@ final class FlightsHeaderView: UICollectionReusableView {
     
     static let identifier = "FlightsHeaderView"
     
-    private let filterOptions = ["Todos", "Concluídos", "Cancelados", "Programados"]
+    private var buttons: [FilterButton] = []
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -23,8 +23,8 @@ final class FlightsHeaderView: UICollectionReusableView {
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
-        stackView.spacing = 10
-        stackView.distribution = .fill
+        stackView.spacing = -10
+        stackView.distribution = .equalSpacing
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -56,8 +56,30 @@ final class FlightsHeaderView: UICollectionReusableView {
     }
     
     private func addFilterButtons() {
-        filterOptions.forEach {
-            stackView.addArrangedSubview(FilterButton(title: $0))
+        FilterOption.allCases.forEach {
+            let filterButton = FilterButton(title: $0.title)
+            filterButton.tag = $0.rawValue
+            filterButton.addTarget(self, action: #selector(filterButtonTapped(_:)), for: .touchUpInside)
+            stackView.addArrangedSubview(filterButton)
+            buttons.append(filterButton)
+            
+            if $0 == .all {
+                filterButton.isSelectedButton = true
+            }
         }
+    }
+    
+    var onFilterButtonTapped: ((FilterOption) -> Void)?
+    
+    @objc func filterButtonTapped(_ button: FilterButton) {
+        guard let filterOption = FilterOption(rawValue: button.tag) else {
+            return
+        }
+        
+        buttons.forEach{ $0.isSelectedButton = false}
+        
+        button.isSelectedButton = true
+        
+        onFilterButtonTapped?(filterOption)
     }
 }
