@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -14,16 +15,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
+        let homeView = HomeView()
+        
         let flightService = FlightService()
         
         let flightViewModel = FlightViewModel(flightService: flightService)
+        
+        let hostingController = UIHostingController(rootView: homeView)
+        
+        let navigationController = UINavigationController(rootViewController: hostingController)
+
 
         window = UIWindow(windowScene: windowScene)
-        
-        let viewController = FlightsViewController(viewModel: flightViewModel)
-        
-        let navigationController = UINavigationController(rootViewController: viewController)
-        
+                
         window?.rootViewController = navigationController
         
         window?.makeKeyAndVisible()
