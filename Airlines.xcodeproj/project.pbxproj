@@ -12,7 +12,6 @@
 		1F1D93E72CB43F0B00BBB632 /* FlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D93E62CB43F0B00BBB632 /* FlightsViewController.swift */; };
 		1F1D93EC2CB43F0D00BBB632 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F1D93EB2CB43F0D00BBB632 /* Assets.xcassets */; };
 		1F1D93EF2CB43F0D00BBB632 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 1F1D93EE2CB43F0D00BBB632 /* Base */; };
-		1F1D93FA2CB43F0D00BBB632 /* AirlinesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D93F92CB43F0D00BBB632 /* AirlinesTests.swift */; };
 		1F1D94042CB43F0D00BBB632 /* AirlinesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94032CB43F0D00BBB632 /* AirlinesUITests.swift */; };
 		1F1D94062CB43F0D00BBB632 /* AirlinesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94052CB43F0D00BBB632 /* AirlinesUITestsLaunchTests.swift */; };
 		1F1D94192CB5D2B400BBB632 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94182CB5D2B400BBB632 /* Flight.swift */; };
@@ -27,6 +26,8 @@
 		1F1D942F2CB7A72500BBB632 /* FilterOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D942E2CB7A72500BBB632 /* FilterOption.swift */; };
 		1F1D94352CB9031500BBB632 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94342CB9031500BBB632 /* HomeView.swift */; };
 		1F1D94372CB9032E00BBB632 /* FlightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94362CB9032E00BBB632 /* FlightsView.swift */; };
+		1F1D94422CB9B43300BBB632 /* MockFlightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94412CB9B43300BBB632 /* MockFlightService.swift */; };
+		1F1D94462CB9BCCD00BBB632 /* FlightViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94452CB9BCCD00BBB632 /* FlightViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +56,6 @@
 		1F1D93EE2CB43F0D00BBB632 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F1D93F02CB43F0D00BBB632 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F1D93F52CB43F0D00BBB632 /* AirlinesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirlinesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F1D93F92CB43F0D00BBB632 /* AirlinesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlinesTests.swift; sourceTree = "<group>"; };
 		1F1D93FF2CB43F0D00BBB632 /* AirlinesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirlinesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1D94032CB43F0D00BBB632 /* AirlinesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlinesUITests.swift; sourceTree = "<group>"; };
 		1F1D94052CB43F0D00BBB632 /* AirlinesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlinesUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -71,6 +71,8 @@
 		1F1D942E2CB7A72500BBB632 /* FilterOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOption.swift; sourceTree = "<group>"; };
 		1F1D94342CB9031500BBB632 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1F1D94362CB9032E00BBB632 /* FlightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsView.swift; sourceTree = "<group>"; };
+		1F1D94412CB9B43300BBB632 /* MockFlightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFlightService.swift; sourceTree = "<group>"; };
+		1F1D94452CB9BCCD00BBB632 /* FlightViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +140,8 @@
 		1F1D93F82CB43F0D00BBB632 /* AirlinesTests */ = {
 			isa = PBXGroup;
 			children = (
-				1F1D93F92CB43F0D00BBB632 /* AirlinesTests.swift */,
+				1F1D94472CB9C67200BBB632 /* Doubles */,
+				1F1D94452CB9BCCD00BBB632 /* FlightViewModelTests.swift */,
 			);
 			path = AirlinesTests;
 			sourceTree = "<group>";
@@ -214,6 +217,14 @@
 				1F1D94202CB5E86500BBB632 /* FilterButton.swift */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		1F1D94472CB9C67200BBB632 /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				1F1D94412CB9B43300BBB632 /* MockFlightService.swift */,
+			);
+			path = Doubles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,7 +379,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F1D93FA2CB43F0D00BBB632 /* AirlinesTests.swift in Sources */,
+				1F1D94462CB9BCCD00BBB632 /* FlightViewModelTests.swift in Sources */,
+				1F1D94422CB9B43300BBB632 /* MockFlightService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -37,7 +37,10 @@ final class FlightsViewController: UIViewController {
         setupCollectionView()
         setupNavigationBar()
         
-        viewModel.loadFlights { [weak self] in
+        viewModel.loadFlights { [weak self] result in
+            guard case .success = result else{
+                return 
+            }
             self?.collectionView.reloadData()
         }
     }

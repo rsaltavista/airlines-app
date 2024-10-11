@@ -8,13 +8,14 @@
 import Foundation
 
 protocol FlightViewModelProtocol {
-    func loadFlights(completion: @escaping () -> Void)
+    func loadFlights(completion: @escaping (Result<Void, Error>) -> Void)
     func numberOfFlights() -> Int
     func flightInfo(at index: Int) -> Flight
     func setFilter(_ filterOption: FilterOption, completion: @escaping () -> Void)
 }
 
 final class FlightViewModel: FlightViewModelProtocol {
+    
     private var flights: [Flight] = []
     private var filteredFlights: [Flight] = []
     private let flightService: FlightServiceProtocol
@@ -30,14 +31,15 @@ final class FlightViewModel: FlightViewModelProtocol {
         self.flightService = flightService
     }
     
-    func loadFlights(completion: @escaping () -> Void) {
+    func loadFlights(completion: @escaping (Result<Void, Error>) -> Void) {
         flightService.loadFlights { [weak self] result in
             switch result {
             case .success(let flights):
                 self?.flights = flights
                 self?.filteredFlights = flights
-                completion()
+                completion(.success(()))
             case .failure(let failure):
+                completion(.failure(failure))
                 print("Error loading flights - \(failure)")
             }
         }
