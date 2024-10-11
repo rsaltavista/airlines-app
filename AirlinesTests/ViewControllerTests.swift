@@ -8,8 +8,6 @@
 import XCTest
 @testable import Airlines
 
-
-
 final class ViewControllerTests: XCTestCase {
 
     var viewController: FlightsViewController?
