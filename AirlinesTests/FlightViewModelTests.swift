@@ -25,7 +25,6 @@ final class FlightViewModelTests: XCTestCase {
         super.tearDown()
     }
 
-    // Testando carregamento de voos com sucesso
     func testLoadFlightsSuccess() {
         let expectedFlights = [
             Flight(
@@ -66,7 +65,6 @@ final class FlightViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.numberOfFlights(), 0)
     }
 
-    // Testando filtro de voos concluídos
     func testFilterConcludedFlights() {
         let expectedFlights = [
             Flight(

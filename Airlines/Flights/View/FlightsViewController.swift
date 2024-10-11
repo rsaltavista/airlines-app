@@ -31,6 +31,7 @@ final class FlightsViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,6 +42,12 @@ final class FlightsViewController: UIViewController {
             guard case .success = result else{
                 return 
             }
+            self?.collectionView.reloadData()
+        }
+    }
+    
+    func setFilter(filterOption: FilterOption) {
+        viewModel.setFilter(filterOption) { [weak self] in
             self?.collectionView.reloadData()
         }
     }
@@ -113,9 +120,7 @@ extension FlightsViewController: UICollectionViewDataSource, UICollectionViewDel
         }
         
         header.onFilterButtonTapped = { [weak self] filterOption in
-            self?.viewModel.setFilter(filterOption) {
-                self?.collectionView.reloadData()
-            }
+            self?.setFilter(filterOption: filterOption)
         }
         return header
     }

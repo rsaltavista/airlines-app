@@ -26,7 +26,7 @@ final class FlightServiceTests: XCTestCase {
             switch result {
             case .success(let flights):
                 XCTAssertEqual(flights.count, 20)
-            case .failure(let failure):
+            case .failure:
                 XCTFail("Fail loading flights from json")
             }
         })

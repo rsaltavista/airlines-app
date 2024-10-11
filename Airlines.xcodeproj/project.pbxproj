@@ -29,6 +29,8 @@
 		1F1D94422CB9B43300BBB632 /* MockFlightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94412CB9B43300BBB632 /* MockFlightService.swift */; };
 		1F1D94462CB9BCCD00BBB632 /* FlightViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94452CB9BCCD00BBB632 /* FlightViewModelTests.swift */; };
 		1F1D94492CB9C75A00BBB632 /* FlightServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94482CB9C75A00BBB632 /* FlightServiceTests.swift */; };
+		1F1D944B2CB9C9B300BBB632 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D944A2CB9C9B300BBB632 /* ViewControllerTests.swift */; };
+		1F1D944D2CB9D5CE00BBB632 /* SpyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D944C2CB9D5CE00BBB632 /* SpyViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		1F1D94412CB9B43300BBB632 /* MockFlightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFlightService.swift; sourceTree = "<group>"; };
 		1F1D94452CB9BCCD00BBB632 /* FlightViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightViewModelTests.swift; sourceTree = "<group>"; };
 		1F1D94482CB9C75A00BBB632 /* FlightServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightServiceTests.swift; sourceTree = "<group>"; };
+		1F1D944A2CB9C9B300BBB632 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
+		1F1D944C2CB9D5CE00BBB632 /* SpyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 				1F1D94472CB9C67200BBB632 /* Doubles */,
 				1F1D94452CB9BCCD00BBB632 /* FlightViewModelTests.swift */,
 				1F1D94482CB9C75A00BBB632 /* FlightServiceTests.swift */,
+				1F1D944A2CB9C9B300BBB632 /* ViewControllerTests.swift */,
 			);
 			path = AirlinesTests;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				1F1D94412CB9B43300BBB632 /* MockFlightService.swift */,
+				1F1D944C2CB9D5CE00BBB632 /* SpyViewModel.swift */,
 			);
 			path = Doubles;
 			sourceTree = "<group>";
@@ -383,7 +389,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F1D94462CB9BCCD00BBB632 /* FlightViewModelTests.swift in Sources */,
+				1F1D944D2CB9D5CE00BBB632 /* SpyViewModel.swift in Sources */,
 				1F1D94422CB9B43300BBB632 /* MockFlightService.swift in Sources */,
+				1F1D944B2CB9C9B300BBB632 /* ViewControllerTests.swift in Sources */,
 				1F1D94492CB9C75A00BBB632 /* FlightServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

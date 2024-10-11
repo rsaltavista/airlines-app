@@ -8,7 +8,7 @@
 @testable import Airlines
 import Foundation
 
-class MockFlightService: FlightServiceProtocol {
+final class MockFlightService: FlightServiceProtocol {
     var flightsToReturn: [Flight] = []
     var shouldReturnError = false
 
