@@ -26,6 +26,13 @@ Este projeto é uma aplicação de gerenciamento de voos desenvolvida utilizando
 - **Spies**: Verificam se os métodos foram corretamente invocados.
 
 
+## Demonstração do App: 
+
+
+https://github.com/user-attachments/assets/9eb20309-61a7-440d-baeb-669a955462ec
+
+
+
 ## Como Rodar o Projeto
 
 1. Clone o repositório.
