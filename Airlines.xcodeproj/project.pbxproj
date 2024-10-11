@@ -121,22 +121,16 @@
 		1F1D93E12CB43F0B00BBB632 /* Airlines */ = {
 			isa = PBXGroup;
 			children = (
-				1F1D94262CB5EABA00BBB632 /* massa-de-teste.json */,
-				1F1D941B2CB5E70100BBB632 /* View */,
-				1F1D941A2CB5D2BA00BBB632 /* Model */,
 				1F1D93E22CB43F0B00BBB632 /* AppDelegate.swift */,
 				1F1D93E42CB43F0B00BBB632 /* SceneDelegate.swift */,
-				1F1D93E62CB43F0B00BBB632 /* FlightsViewController.swift */,
-				1F1D94282CB6FE9100BBB632 /* FlightViewModel.swift */,
-				1F1D94222CB5E99400BBB632 /* FlightResponse.swift */,
-				1F1D942A2CB7291100BBB632 /* Flight+FlightCellModel.swift */,
-				1F1D942C2CB73CF000BBB632 /* FlightService.swift */,
-				1F1D942E2CB7A72500BBB632 /* FilterOption.swift */,
+				1F1D94262CB5EABA00BBB632 /* massa-de-teste.json */,
+				1F1D94382CB99ABD00BBB632 /* Home */,
+				1F1D943A2CB99B0800BBB632 /* Flights */,
+				1F1D941B2CB5E70100BBB632 /* ViewModel */,
+				1F1D941A2CB5D2BA00BBB632 /* Model */,
 				1F1D93EB2CB43F0D00BBB632 /* Assets.xcassets */,
 				1F1D93ED2CB43F0D00BBB632 /* LaunchScreen.storyboard */,
 				1F1D93F02CB43F0D00BBB632 /* Info.plist */,
-				1F1D94342CB9031500BBB632 /* HomeView.swift */,
-				1F1D94362CB9032E00BBB632 /* FlightsView.swift */,
 			);
 			path = Airlines;
 			sourceTree = "<group>";
@@ -162,18 +156,64 @@
 			isa = PBXGroup;
 			children = (
 				1F1D94182CB5D2B400BBB632 /* Flight.swift */,
+				1F1D942A2CB7291100BBB632 /* Flight+FlightCellModel.swift */,
+				1F1D942E2CB7A72500BBB632 /* FilterOption.swift */,
+				1F1D94222CB5E99400BBB632 /* FlightResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		1F1D941B2CB5E70100BBB632 /* View */ = {
+		1F1D941B2CB5E70100BBB632 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1F1D94282CB6FE9100BBB632 /* FlightViewModel.swift */,
+				1F1D942C2CB73CF000BBB632 /* FlightService.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1F1D94382CB99ABD00BBB632 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1F1D94392CB99AD000BBB632 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		1F1D94392CB99AD000BBB632 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F1D94342CB9031500BBB632 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1F1D943A2CB99B0800BBB632 /* Flights */ = {
+			isa = PBXGroup;
+			children = (
+				1F1D943B2CB99B3900BBB632 /* View */,
+			);
+			path = Flights;
+			sourceTree = "<group>";
+		};
+		1F1D943B2CB99B3900BBB632 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F1D93E62CB43F0B00BBB632 /* FlightsViewController.swift */,
+				1F1D94362CB9032E00BBB632 /* FlightsView.swift */,
+				1F1D943C2CB99B4D00BBB632 /* SubViews */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1F1D943C2CB99B4D00BBB632 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
 				1F1D941C2CB5E74200BBB632 /* FlightCell.swift */,
 				1F1D941E2CB5E82700BBB632 /* FlightsHeaderView.swift */,
 				1F1D94202CB5E86500BBB632 /* FilterButton.swift */,
 			);
-			path = View;
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -124,13 +124,13 @@ final class FlightCell: UICollectionViewCell {
         DateLabel.text = model.DateLabelText
         
         if model.isConcluded {
-            statusIconImageView.image = UIImage(systemName: "checkmark.circle.fill") // Ícone de checkmark
+            statusIconImageView.image = UIImage(systemName: "checkmark.circle.fill")
             statusIconImageView.tintColor = .systemGreen
         } else if model.isCanceled {
-            statusIconImageView.image = UIImage(systemName: "exclamationmark.triangle.fill") // Ícone de alerta
+            statusIconImageView.image = UIImage(systemName: "exclamationmark.triangle.fill")
             statusIconImageView.tintColor = .red
         } else {
-            statusIconImageView.image = nil // Remove o ícone se não for concluído ou cancelado
+            statusIconImageView.image = nil
         }
     }
 }

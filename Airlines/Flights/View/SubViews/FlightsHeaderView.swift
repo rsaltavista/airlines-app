@@ -42,6 +42,7 @@ final class FlightsHeaderView: UICollectionReusableView {
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             scrollView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),

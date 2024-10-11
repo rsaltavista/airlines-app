@@ -25,7 +25,6 @@ final class FlightViewModel: FlightViewModelProtocol {
         // Definig a previous date to validate filters
         return dateFormatter.date(from: "2024-08-27 10:00") ?? Date()
     }()
-
     
     init(flightService: FlightServiceProtocol) {
         self.flightService = flightService
@@ -69,23 +68,23 @@ final class FlightViewModel: FlightViewModelProtocol {
     }
     
     private func isFlightOnSchedule(_ flight: Flight) -> Bool {
-            guard let flightStartDate = createDate(from: flight.startDate, time: flight.departureTime) else {
-                return false
-            }
-            return flightStartDate >= currentDate
+        guard let flightStartDate = createDate(from: flight.startDate, time: flight.departureTime) else {
+            return false
         }
-
-        private func isFlightInProgress(_ flight: Flight) -> Bool {
-            guard let startDate = createDate(from: flight.startDate, time: flight.departureTime),
-                  let endDate = createDate(from: flight.endDate, time: flight.arrivalTime) else {
-                return false
-            }
-            return startDate <= currentDate && endDate >= currentDate
+        return flightStartDate >= currentDate
+    }
+    
+    private func isFlightInProgress(_ flight: Flight) -> Bool {
+        guard let startDate = createDate(from: flight.startDate, time: flight.departureTime),
+              let endDate = createDate(from: flight.endDate, time: flight.arrivalTime) else {
+            return false
         }
-
-        private func createDate(from date: String, time: String) -> Date? {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-            return dateFormatter.date(from: "\(date) \(time)")
-        }
+        return startDate <= currentDate && endDate >= currentDate
+    }
+    
+    private func createDate(from date: String, time: String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return dateFormatter.date(from: "\(date) \(time)")
+    }
 }
