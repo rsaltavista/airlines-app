@@ -28,6 +28,7 @@
 		1F1D94372CB9032E00BBB632 /* FlightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94362CB9032E00BBB632 /* FlightsView.swift */; };
 		1F1D94422CB9B43300BBB632 /* MockFlightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94412CB9B43300BBB632 /* MockFlightService.swift */; };
 		1F1D94462CB9BCCD00BBB632 /* FlightViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94452CB9BCCD00BBB632 /* FlightViewModelTests.swift */; };
+		1F1D94492CB9C75A00BBB632 /* FlightServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D94482CB9C75A00BBB632 /* FlightServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		1F1D94362CB9032E00BBB632 /* FlightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsView.swift; sourceTree = "<group>"; };
 		1F1D94412CB9B43300BBB632 /* MockFlightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFlightService.swift; sourceTree = "<group>"; };
 		1F1D94452CB9BCCD00BBB632 /* FlightViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightViewModelTests.swift; sourceTree = "<group>"; };
+		1F1D94482CB9C75A00BBB632 /* FlightServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			children = (
 				1F1D94472CB9C67200BBB632 /* Doubles */,
 				1F1D94452CB9BCCD00BBB632 /* FlightViewModelTests.swift */,
+				1F1D94482CB9C75A00BBB632 /* FlightServiceTests.swift */,
 			);
 			path = AirlinesTests;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 			files = (
 				1F1D94462CB9BCCD00BBB632 /* FlightViewModelTests.swift in Sources */,
 				1F1D94422CB9B43300BBB632 /* MockFlightService.swift in Sources */,
+				1F1D94492CB9C75A00BBB632 /* FlightServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
